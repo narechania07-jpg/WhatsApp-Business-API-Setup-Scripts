@@ -1,0 +1,49 @@
+{
+    "replyInGroups": false,
+    "ignoreChats": [],
+    "typingDelayMs": 1500,
+    "ruleCooldownMinutes": 1,
+    "fallbackCooldownMinutes": 360,
+
+    "businessHours": {
+        "timezone": "Asia/Kolkata",
+        "days": ["mon", "tue", "wed", "thu", "fri", "sat"],
+        "start": "09:00",
+        "end": "18:00"
+    },
+    "awayMessage": "Hi {name}! We're closed right now (Mon–Sat, 9:00–18:00 IST). We'll get back to you as soon as we open.",
+    "defaultReply": "Thanks for your message, {name}! Someone from our team will reply shortly. Type *menu* to see what I can help with.",
+
+    "rules": [
+        {
+            "id": "greeting",
+            "match": "regex",
+            "pattern": "^(hi|hello|hey|namaste)\\b",
+            "reply": "Hello {name}! 👋 Type *menu* to see what I can help with."
+        },
+        {
+            "id": "menu",
+            "match": "exact",
+            "keywords": ["menu", "help"],
+            "reply": "Here's what I can help with:\n1. *price* – pricing details\n2. *hours* – opening hours\n3. *address* – where to find us"
+        },
+        {
+            "id": "price",
+            "match": "contains",
+            "keywords": ["price", "pricing", "cost", "rate"],
+            "reply": "Our pricing starts at ₹499/month. Reply *menu* for more options."
+        },
+        {
+            "id": "hours",
+            "match": "contains",
+            "keywords": ["hours", "timing", "open"],
+            "reply": "We're open Mon–Sat, 9:00–18:00 IST."
+        },
+        {
+            "id": "address",
+            "match": "contains",
+            "keywords": ["address", "location", "where are you"],
+            "reply": "You can find us at: 123 Example Street, Mumbai."
+        }
+    ]
+}
