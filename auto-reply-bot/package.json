@@ -1,0 +1,19 @@
+{
+    "name": "whatsapp-auto-reply-bot",
+    "version": "1.0.0",
+    "description": "Rule-based WhatsApp auto-reply bot built on whatsapp-web.js",
+    "main": "src/bot.js",
+    "private": true,
+    "scripts": {
+        "start": "node src/bot.js",
+        "test": "node --test"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "dependencies": {
+        "qrcode-terminal": "^0.12.0",
+        "whatsapp-web.js": "github:narechania07-jpg/whatsapp-web.js"
+    },
+    "license": "MIT"
+}
